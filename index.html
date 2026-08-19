@@ -1,180 +1,280 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NUNN Lawn Care | Professional Lawn Care in Orange Park, FL</title>
-<meta name="description" content="NUNN Lawn Care provides professional residential and commercial lawn care in Orange Park, FL. Call or text for a free estimate.">
-<style>
-:root{--green:#176b36;--dark:#092b18;--lime:#9bd35a;--cream:#f5f8f2;--text:#243128;--muted:#667269;--white:#fff;--line:#e2e9e1}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6;background:#fff}
-a{text-decoration:none;color:inherit}
-.container{width:min(1140px,92%);margin:auto}
-.topbar{background:var(--dark);color:#e8f4ea;font-size:.9rem;padding:8px 0}
-.topbar .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:950;font-size:1.35rem;letter-spacing:.5px;color:var(--dark)}
-.logo span{color:var(--green)}
-.navlinks{display:flex;align-items:center;gap:25px;font-weight:800;font-size:.92rem}
-.btn{display:inline-block;background:var(--green);color:#fff;padding:13px 21px;border-radius:8px;font-weight:900;border:0;cursor:pointer;transition:.2s}
-.btn:hover{background:#0f5128;transform:translateY(-1px)}
-.btn.outline{background:transparent;border:2px solid #fff}
-.btn.lime{background:var(--lime);color:var(--dark)}
-.hero{color:#fff;min-height:650px;display:flex;align-items:center;background:linear-gradient(110deg,rgba(5,34,18,.94),rgba(23,107,54,.70)),url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1900&q=90') center/cover}
-.hero-content{max-width:780px;padding:90px 0}
-.kicker{text-transform:uppercase;letter-spacing:2.5px;color:var(--lime);font-size:.85rem;font-weight:900;margin-bottom:14px}
-h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.02;margin-bottom:20px}
-.hero p{font-size:1.2rem;color:#edf7ee;max-width:690px;margin-bottom:30px}
-.actions{display:flex;gap:12px;flex-wrap:wrap}
-.trust{background:#fff;box-shadow:0 8px 28px rgba(0,0,0,.08);margin-top:-42px;position:relative;border-radius:15px;padding:22px}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;text-align:center}
-.trust strong{display:block;color:var(--dark);font-size:1rem}.trust span{color:var(--muted);font-size:.85rem}
-section{padding:82px 0}
-.section-head{text-align:center;max-width:720px;margin:0 auto 45px}
-.section-head h2{font-size:2.45rem;line-height:1.15;color:var(--dark);margin-bottom:12px}
-.section-head p{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{padding:30px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 8px 28px rgba(18,55,28,.06)}
-.icon{font-size:2rem;margin-bottom:12px}.card h3{color:var(--dark);margin-bottom:8px}.card p{color:var(--muted)}
-.alt{background:var(--cream)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-.about-img{width:100%;height:480px;object-fit:cover;border-radius:18px;box-shadow:0 18px 45px rgba(0,0,0,.12)}
-.checks{list-style:none;margin:22px 0}
-.checks li{margin:12px 0;font-weight:750}.checks li:before{content:"✓";color:var(--green);font-weight:950;margin-right:10px}
-.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px;gap:12px}
-.gallery img{width:100%;height:100%;object-fit:cover;border-radius:13px}.gallery img:first-child{grid-row:span 2}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.review{border:1px solid var(--line);border-radius:14px;padding:27px;background:#fff}.stars{letter-spacing:2px;margin-bottom:12px}.review p{font-style:italic;color:#4e5b52;margin-bottom:15px}.review strong{color:var(--dark)}
-.before-after{display:grid;grid-template-columns:1fr 1fr;gap:22px}.ba{position:relative}.ba img{width:100%;height:350px;object-fit:cover;border-radius:15px}.label{position:absolute;top:15px;left:15px;background:var(--dark);color:#fff;padding:7px 12px;border-radius:6px;font-weight:900;font-size:.8rem}
-.map-wrap{border-radius:16px;overflow:hidden;border:1px solid var(--line);height:360px;background:#eaf1e9;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px}
-.map-wrap h3{color:var(--dark);font-size:1.5rem}.map-wrap p{color:var(--muted);margin:8px 0 18px}
-.quote{background:var(--dark);color:#fff}
-.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start}
-.quote h2{font-size:2.7rem;line-height:1.1;margin-bottom:14px}.quote p{color:#d7e6da}
-.form{background:#fff;padding:30px;border-radius:15px;color:var(--text)}
-.form h3{color:var(--dark);margin-bottom:15px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-input,textarea,select{width:100%;padding:13px 14px;border:1px solid #ccd8cc;border-radius:8px;font:inherit}
-textarea{min-height:120px;resize:vertical}.full{grid-column:1/-1}.form .btn{width:100%;margin-top:14px}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.contact-box{background:var(--cream);padding:30px;border-radius:15px}.contact-box h3{color:var(--dark);margin-bottom:14px}
-.contact-item{margin:15px 0}.contact-item strong{display:block;color:var(--dark)}
-footer{background:#061b0e;color:#cbd8cd;padding:32px 0}.footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.small{font-size:.88rem;color:#93a79a}
-@media(max-width:850px){.navlinks{display:none}.trust-grid,.cards,.reviews,.about-grid,.quote-grid,.contact,.before-after{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.gallery img:first-child{grid-row:span 1;grid-column:span 2}.hero{min-height:600px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://nunnlawncare.com/">
+  <meta property="og:title" content="Nunn Lawn Care | Lawn Care & Yard Maintenance">
+  <meta property="og:description" content="Professional lawn care and yard maintenance serving Orange Park, Fleming Island and nearby Northeast Florida communities.">
+  <meta property="og:url" content="https://nunnlawncare.com/">
+  <meta name="theme-color" content="#140c24">
+  <meta name="description" content="Nunn Lawn Care — professional lawn mowing, yard maintenance, mulching, cleanups and landscaping serving Lakeside, Orange Park, Fleming Island and nearby Northeast Florida communities.">
+  <title>Nunn Lawn Care | Lawn Care & Yard Maintenance</title>
+  <style>
+    :root{
+      --purple:#6d22d9;
+      --purple2:#a855f7;
+      --deep:#0e0718;
+      --deep2:#180c29;
+      --green:#9cff00;
+      --green2:#56f000;
+      --white:#f7f8f5;
+      --muted:#c7c5cf;
+      --line:rgba(255,255,255,.12);
+      --card:rgba(255,255,255,.06);
+      --shadow:0 24px 70px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--deep);color:var(--white);line-height:1.55}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    .topbar{background:var(--green);color:#101508;text-align:center;font-weight:800;font-size:.9rem;padding:9px 14px}
+    header{position:sticky;top:0;z-index:50;background:rgba(14,7,24,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:950;letter-spacing:-.04em;font-size:1.25rem}
+    .mark{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green),#54c900);color:#0d1704;font-weight:1000;box-shadow:0 0 28px rgba(156,255,0,.25)}
+    .navlinks{display:flex;gap:26px;color:#ddd9e5;font-weight:700;font-size:.95rem}
+    .navlinks a:hover{color:var(--green)}
+    .navcta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:13px 20px;font-weight:900}
+    .navcta{background:var(--green);color:#101508}
+    .hero{position:relative;overflow:hidden;padding:92px 0 100px;background:
+      radial-gradient(circle at 80% 20%,rgba(168,85,247,.28),transparent 33%),
+      radial-gradient(circle at 10% 80%,rgba(156,255,0,.12),transparent 28%),
+      linear-gradient(145deg,#10071b,#1d0c31 60%,#12091e)}
+    .hero:after{content:"";position:absolute;inset:auto -10% -170px;height:330px;background:var(--green);opacity:.07;transform:rotate(-5deg)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--green);font-weight:950;text-transform:uppercase;letter-spacing:.13em;font-size:.78rem}
+    h1{font-size:clamp(3rem,7vw,5.7rem);line-height:.94;letter-spacing:-.07em;margin:16px 0 25px}
+    h1 span{color:var(--green);text-shadow:0 0 30px rgba(156,255,0,.18)}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:620px}
+    .actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .btn-primary{background:var(--green);color:#101508;box-shadow:0 10px 30px rgba(156,255,0,.16)}
+    .btn-secondary{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05)}
+    .btn-secondary:hover{border-color:var(--green)}
+    .hero-card{border:1px solid rgba(255,255,255,.15);border-radius:30px;padding:12px;background:rgba(255,255,255,.05);box-shadow:var(--shadow);transform:rotate(2deg)}
+    .lawn-art{min-height:420px;border-radius:22px;overflow:hidden;position:relative;background:
+      linear-gradient(160deg,rgba(109,34,217,.25),transparent 40%),
+      linear-gradient(180deg,#78b9ed 0 35%,#92d14f 35% 60%,#3f922f 60%);
+    }
+    .lawn-art:before{content:"";position:absolute;left:-10%;right:-10%;bottom:18%;height:35%;background:#4b9c32;clip-path:polygon(0 45%,15% 25%,28% 45%,43% 20%,60% 48%,76% 23%,100% 50%,100% 100%,0 100%)}
+    .house{position:absolute;left:14%;bottom:38%;width:66%;height:26%;background:#f4e8cf;border:4px solid #fff;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+    .roof{position:absolute;left:8%;top:-48%;width:84%;height:80%;background:#624c45;clip-path:polygon(50% 0,100% 100%,0 100%);border-bottom:6px solid #45312d}
+    .door{position:absolute;right:14%;bottom:0;width:13%;height:58%;background:#493126}
+    .window{position:absolute;left:16%;bottom:18%;width:18%;height:27%;background:#87cbe7;border:4px solid white}
+    .grass-stripes{position:absolute;bottom:0;left:0;right:0;height:24%;background:repeating-linear-gradient(80deg,#55ad37 0 32px,#46972f 32px 64px)}
+    .badge{position:absolute;right:22px;top:22px;background:#111;color:white;border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:12px 15px;font-weight:900}
+    .badge strong{color:var(--green);font-size:1.25rem}
+    section{padding:88px 0}
+    .section-head{max-width:720px;margin-bottom:42px}
+    .section-head h2{font-size:clamp(2.1rem,5vw,3.5rem);line-height:1;letter-spacing:-.055em;margin:10px 0 15px}
+    .section-head p{color:var(--muted)}
+    .services{background:#120a1e}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{padding:28px;border-radius:24px;background:var(--card);border:1px solid var(--line);transition:.2s}
+    .card:hover{transform:translateY(-5px);border-color:rgba(156,255,0,.45)}
+    .icon{width:48px;height:48px;border-radius:15px;background:rgba(156,255,0,.12);display:grid;place-items:center;color:var(--green);font-size:1.45rem;margin-bottom:20px}
+    .card h3{margin:0 0 8px;font-size:1.25rem}
+    .card p{margin:0;color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:center}
+    .about-panel{padding:38px;border-radius:28px;background:linear-gradient(145deg,#27113e,#130a20);border:1px solid var(--line)}
+    .checks{display:grid;gap:13px;margin:25px 0 0;padding:0;list-style:none}
+    .checks li{display:flex;gap:12px;align-items:flex-start;color:#e6e2eb}
+    .check{color:var(--green);font-weight:1000}
+    .review{background:linear-gradient(145deg,#160923,#241039)}
+    .review-box{border:1px solid rgba(156,255,0,.28);border-radius:28px;padding:35px;background:rgba(255,255,255,.04)}
+    .stars{color:#ffd21a;letter-spacing:3px;font-size:1.25rem}
+    .quote{font-size:1.45rem;line-height:1.45;margin:17px 0;color:#fff}
+    .review-meta{color:var(--muted)}
+    .areas{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .area-box{padding:30px;border-radius:24px;background:var(--card);border:1px solid var(--line)}
+    .area-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+    .pill{border:1px solid rgba(156,255,0,.25);color:#e9ffd0;background:rgba(156,255,0,.07);padding:8px 12px;border-radius:999px;font-weight:750}
+    .contact{background:var(--green);color:#101508}
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+    .contact h2{font-size:clamp(2.4rem,5vw,4.2rem);line-height:.98;letter-spacing:-.06em;margin:0 0 14px}
+    .contact p{max-width:650px;font-size:1.08rem}
+    .contact-card{background:#12091c;color:#fff;padding:28px;border-radius:25px;box-shadow:var(--shadow)}
+    .contact-line{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+    .contact-line:last-child{border-bottom:0}
+    footer{padding:35px 0;background:#0a0510;color:#a8a3af}
+    footer .container{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .small{font-size:.9rem}
+    @media(max-width:850px){
+      .navlinks{display:none}
+      .hero{padding:65px 0}
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-card{transform:none}
+      .cards{grid-template-columns:1fr 1fr}
+      .areas{grid-template-columns:1fr}
+    }
+    @media(max-width:560px){
+      h1{font-size:3.2rem}
+      .cards{grid-template-columns:1fr}
+      section{padding:65px 0}
+      .topbar{font-size:.78rem}
+      nav{height:68px}
+      .navcta{padding:10px 15px;font-size:.85rem}
+      footer .container{flex-direction:column;align-items:flex-start}
+    }
+  </style>
 </head>
 <body>
-<div class="topbar"><div class="container"><span>🌿 Serving Orange Park & surrounding areas</span><a href="tel:19046549059">📞 (904) 654-9059</a></div></div>
-<header><nav class="container">
-<div class="logo">NUNN <span>LAWN CARE</span></div>
-<div class="navlinks"><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a><a class="btn" href="#estimate">Free Estimate</a></div>
-</nav></header>
+  <div class="topbar">🌱 Local Lawn Care • Free Quotes • Residential & Commercial</div>
 
-<main>
-<section class="hero"><div class="container hero-content">
-<div class="kicker">Professional Lawn Care • Orange Park, FL</div>
-<h1>Your Lawn.<br>Our Passion.</h1>
-<p>Reliable, professional lawn care for homeowners and businesses. We keep your property clean, sharp, and looking its best.</p>
-<div class="actions"><a class="btn lime" href="tel:19046549059">Call or Text (904) 654-9059</a><a class="btn outline" href="#estimate">Get a Free Estimate</a></div>
-</div></section>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top"><span class="mark">NL</span><span>Nunn Lawn Care</span></a>
+        <div class="navlinks">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#areas">Service Area</a>
+        </div>
+        <a class="navcta" href="#contact">Get a Quote →</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="container trust"><div class="trust-grid">
-<div><strong>✓ Free Estimates</strong><span>No obligation</span></div>
-<div><strong>✓ Residential</strong><span>Home lawn care</span></div>
-<div><strong>✓ Commercial</strong><span>Property maintenance</span></div>
-<div><strong>✓ Local Service</strong><span>Orange Park area</span></div>
-</div></div>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">★ 4.7-star local reputation</div>
+          <h1>Your lawn.<br><span>Done right.</span></h1>
+          <p>Professional lawn mowing and yard maintenance with the extra effort that makes your property look its best.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Get Your Free Quote</a>
+            <a class="btn btn-secondary" href="sms:+19046549059">Text Us</a>
+            <a class="btn btn-secondary" href="tel:+19046549059">Call Nunn Lawn Care</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="lawn-art" aria-label="Stylized lawn care illustration">
+            <div class="badge"><strong>LOCAL</strong><br>and dependable</div>
+            <div class="house"><div class="roof"></div><div class="window"></div><div class="door"></div></div>
+            <div class="grass-stripes"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="services"><div class="container">
-<div class="section-head"><div class="kicker" style="color:var(--green)">Our Services</div><h2>Everything Your Property Needs</h2><p>From routine mowing to detailed cleanup, NUNN Lawn Care helps your property make a great impression.</p></div>
-<div class="cards">
-<div class="card"><div class="icon">🌱</div><h3>Lawn Mowing</h3><p>Consistent mowing and cleanup to keep your grass neat, healthy, and presentable.</p></div>
-<div class="card"><div class="icon">✂️</div><h3>Edging & Trimming</h3><p>Sharp, clean edges around driveways, walkways, beds, and landscaping.</p></div>
-<div class="card"><div class="icon">🍂</div><h3>Leaf Cleanup</h3><p>Leaf mulching and cleanup to keep your lawn and property looking tidy.</p></div>
-<div class="card"><div class="icon">🌼</div><h3>Flower Bed Weeding</h3><p>Regular attention to beds and landscaped areas for a cleaner overall appearance.</p></div>
-<div class="card"><div class="icon">🧹</div><h3>Property Cleanup</h3><p>Grass clippings, leaves, and trash-area cleanup after service.</p></div>
-<div class="card"><div class="icon">🏢</div><h3>Commercial Lawn Care</h3><p>Recurring professional maintenance for offices, storefronts, and commercial properties.</p></div>
-</div></div></section>
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What we do</div>
+          <h2>Simple service.<br>Beautiful results.</h2>
+          <p>From routine mowing to cleanup work, Nunn Lawn Care helps keep your property clean, sharp and cared for.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">✂</div><h3>Lawn Mowing</h3><p>Routine mowing, edging, trimming and blowing off hard surfaces for a clean finish.</p></article>
+          <article class="card"><div class="icon">✦</div><h3>Yard Maintenance</h3><p>Ongoing lawn and property maintenance tailored to the needs of your yard.</p></article>
+          <article class="card"><div class="icon">🌿</div><h3>Mulching</h3><p>Refresh beds and landscape areas with a neat, finished look that complements your home.</p></article>
+          <article class="card"><div class="icon">⌁</div><h3>Yard Cleanups</h3><p>Seasonal and one-time cleanup work to get your outdoor space looking its best.</p></article>
+          <article class="card"><div class="icon">☘</div><h3>Landscaping</h3><p>Practical landscaping help for properties that need a little extra attention.</p></article>
+          <article class="card"><div class="icon">★</div><h3>Residential & Commercial</h3><p>Professional service for homeowners and commercial properties in the local area.</p></article>
+        </div>
+      </div>
+    </section>
 
-<section class="alt" id="about"><div class="container about-grid">
-<div><img class="about-img" src="https://images.unsplash.com/photo-1599685315640-7e0d4e2e9c47?auto=format&fit=crop&w=1100&q=90" alt="Freshly maintained lawn"></div>
-<div><div class="kicker" style="color:var(--green)">Why Choose NUNN</div><h2 style="font-size:2.5rem;color:var(--dark);line-height:1.15">Professional results without the hassle.</h2><p style="margin-top:14px;color:var(--muted)">Your property is one of the first things people notice. We take pride in providing dependable lawn care and leaving each property looking clean and finished.</p>
-<ul class="checks"><li>Affordable, reliable, professional service</li><li>Residential & commercial lawn care</li><li>Free estimates</li><li>Local Orange Park service</li></ul><a class="btn" href="#estimate">Request a Free Estimate</a></div>
-</div></section>
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-panel">
+          <div class="eyebrow">Why Nunn Lawn Care</div>
+          <h2>Extra effort shows.</h2>
+          <p>We believe a well-maintained property should look cared for from the curb to the back fence. Our goal is straightforward: do dependable work, communicate well and leave the yard looking better than we found it.</p>
+          <ul class="checks">
+            <li><span class="check">✓</span> Professional mowing, edging, trimming and cleanup</li>
+            <li><span class="check">✓</span> Residential and commercial lawn care</li>
+            <li><span class="check">✓</span> Recurring and one-time service options</li>
+            <li><span class="check">✓</span> Serving Lakeside and nearby Northeast Florida communities</li>
+          </ul>
+        </div>
+        <div class="section-head">
+          <div class="eyebrow">Built for local customers</div>
+          <h2>A clean yard makes a difference.</h2>
+          <p>Nunn Lawn Care is positioned as a local lawn and yard service provider serving the Orange Park area and nearby communities. Services include lawn mowing, landscaping and yard cleanup. Current online listings also show service activity around Lakeside, Middleburg and Jacksonville-area communities.</p>
+          <div class="actions"><a class="btn btn-primary" href="#contact">Request a Quote</a></div>
+        </div>
+      </div>
+    </section>
 
-<section id="gallery"><div class="container">
-<div class="section-head"><div class="kicker" style="color:var(--green)">Our Work</div><h2>Fresh-Cut Results</h2><p>Replace these sample photos with your own completed-job photos as you build your portfolio.</p></div>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=85" alt="Mowed lawn">
-<img src="https://images.unsplash.com/photo-1599685315640-7e0d4e2e9c47?auto=format&fit=crop&w=900&q=85" alt="Green lawn">
-<img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=85" alt="Lawn care">
-<img src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=900&q=85" alt="Landscape">
-<img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=85" alt="Yard maintenance">
-</div></div></section>
+    <section class="review" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Customer feedback</div>
+          <h2>Great lawns. Happy customers.</h2>
+        </div>
+        <div class="review-box">
+          <div class="stars">★★★★★</div>
+          <div class="quote">“Very professional and an excellent job on the yard!”</div>
+          <div class="review-meta">Customer feedback • Nunn Lawn Care</div>
+          <div class="actions">
+            <a class="btn btn-secondary" href="https://maps.app.goo.gl/gSn8JSsHESm8Jfy36" target="_blank" rel="noopener">Google Business Profile ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="alt"><div class="container">
-<div class="section-head"><div class="kicker" style="color:var(--green)">Before & After</div><h2>Show Customers the Difference</h2><p>These are sample images. Swap them for your own before-and-after jobs to make this section even stronger.</p></div>
-<div class="before-after">
-<div class="ba"><img src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1000&q=85" alt="Before lawn care"><div class="label">BEFORE</div></div>
-<div class="ba"><img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1000&q=85" alt="After lawn care"><div class="label">AFTER</div></div>
-</div></div></section>
+    <section id="areas">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Service area</div>
+          <h2>Local service, close to home.</h2>
+          <p>Serving Lakeside and surrounding Northeast Florida communities. Contact us to confirm your address is within our current service area.</p>
+        </div>
+        <div class="areas">
+          <div class="area-box">
+            <h3>Areas we can serve</h3>
+            <div class="area-list">
+              <span class="pill">Lakeside</span>
+              <span class="pill">Orange Park</span>
+              <span class="pill">Fleming Island</span>
+              <span class="pill">Middleburg</span>
+              <span class="pill">Jacksonville area</span>
+              <span class="pill">Nearby communities</span>
+            </div>
+          </div>
+          <div class="area-box">
+            <h3>Need service outside these areas?</h3>
+            <p>Send us your address and what you need done. We can let you know whether your property is within our current route.</p>
+            <a class="btn btn-primary" href="#contact">Ask About Your Address</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="reviews"><div class="container">
-<div class="section-head"><div class="kicker" style="color:var(--green)">Customer Reviews</div><h2>Let Your Customers Sell the Service</h2><p>Add real customer reviews here as you receive them. Don't publish sample reviews as if they were real.</p></div>
-<div class="reviews">
-<div class="review"><div class="stars">★★★★★</div><p>“Add your first real customer review here. A short review about reliability and a great-looking lawn works perfectly.”</p><strong>— Customer Name</strong></div>
-<div class="review"><div class="stars">★★★★★</div><p>“Add a second real review here highlighting communication, professionalism, or the quality of the finished yard.”</p><strong>— Customer Name</strong></div>
-<div class="review"><div class="stars">★★★★★</div><p>“Add a third real review here once you have one. Real customer feedback builds trust with new leads.”</p><strong>— Customer Name</strong></div>
-</div></div></section>
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow" style="color:#101508">Ready when you are</div>
+          <h2>Let's get your lawn looking right.</h2>
+          <p>Call or text for a quote. Tell us what you need, where you're located and whether you're looking for recurring or one-time service.</p>
+          <div class="actions">
+            <a class="btn" style="background:#12091c;color:#fff" href="tel:+19046549059">Call / Text</a>
+            <a class="btn" style="background:#12091c;color:#fff" href="https://maps.app.goo.gl/gSn8JSsHESm8Jfy36" target="_blank" rel="noopener">Google Business</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-line"><strong>Business</strong><span>Nunn Lawn Care</span></div>
+          <div class="contact-line"><strong>Service</strong><span>Lawn & Yard Care</span></div>
+          <div class="contact-line"><strong>Area</strong><span>Lakeside & nearby areas</span></div>
+          <div class="contact-line"><strong>Quote</strong><span>Call or text</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<section class="alt"><div class="container">
-<div class="section-head"><div class="kicker" style="color:var(--green)">Service Area</div><h2>Proudly Serving Orange Park</h2><p>Based in the Orange Park area and serving nearby residential and commercial properties.</p></div>
-<div class="map-wrap"><div><h3>📍 Orange Park, Florida</h3><p>Residential & commercial lawn care in Orange Park and surrounding areas.</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Orange+Park%2C+FL" target="_blank" rel="noopener">View Orange Park on Maps</a></div></div>
-</div></section>
+  <footer>
+    <div class="container">
+      <div><strong style="color:#fff">Nunn Lawn Care</strong><br><span class="small">Professional lawn care & yard maintenance • Orange Park & Fleming Island</span></div>
+      <div class="small">© <span id="year"></span> Nunn Lawn Care. All rights reserved.</div>
+    </div>
+  </footer>
 
-<section class="quote" id="estimate"><div class="container quote-grid">
-<div><div class="kicker">Free Estimates</div><h2>Let's make your lawn look its best.</h2><p>Call or text NUNN Lawn Care for a free estimate. Tell us what type of property you have, where it's located, and what services you're looking for.</p><div style="margin-top:25px"><a class="btn lime" href="tel:19046549059">📞 Call (904) 654-9059</a></div></div>
-<form class="form" onsubmit="sendEstimate(event)">
-<h3>Request an Estimate</h3>
-<div class="form-grid">
-<input id="name" required placeholder="Your Name">
-<input id="phone" required placeholder="Phone Number">
-<input id="address" class="full" placeholder="Property Address">
-<select id="type"><option>Residential</option><option>Commercial</option></select>
-<select id="service"><option>Lawn Mowing</option><option>Full Lawn Care</option><option>Cleanup</option><option>Commercial Service</option><option>Other</option></select>
-<textarea id="message" class="full" placeholder="Tell us what you need..."></textarea>
-</div>
-<button class="btn" type="submit">Send Estimate Request</button>
-<p class="small" style="margin-top:10px">Submitting opens your text-message app with the details filled in.</p>
-</form>
-</div></section>
-
-<section id="contact"><div class="container">
-<div class="section-head"><div class="kicker" style="color:var(--green)">Contact</div><h2>Ready to Get Started?</h2><p>Reach out today and let's talk about your property.</p></div>
-<div class="contact">
-<div class="contact-box"><h3>NUNN Lawn Care</h3><div class="contact-item"><strong>Phone / Text</strong><a href="tel:19046549059">(904) 654-9059</a></div><div class="contact-item"><strong>Service Area</strong>Orange Park, FL and surrounding areas</div><div class="contact-item"><strong>Services</strong>Residential & Commercial Lawn Care</div></div>
-<div class="contact-box"><h3>Quick Contact</h3><p style="margin-bottom:18px;color:var(--muted)">Have a question or want a quote? Text us and we'll get back to you.</p><a class="btn" href="sms:19046549059?body=Hi%20NUNN%20Lawn%20Care%2C%20I'd%20like%20a%20free%20estimate.">Text NUNN Lawn Care</a></div>
-</div></div></section>
-</main>
-
-<footer><div class="container footer-grid"><div><strong>NUNN Lawn Care</strong><br><span class="small">Your Lawn. Our Passion.</span></div><div class="small">© 2026 NUNN Lawn Care. All rights reserved.</div></div></footer>
-
-<script>
-function sendEstimate(e){
- e.preventDefault();
- const name=document.getElementById('name').value;
- const phone=document.getElementById('phone').value;
- const address=document.getElementById('address').value;
- const type=document.getElementById('type').value;
- const service=document.getElementById('service').value;
- const message=document.getElementById('message').value;
- const body=`Hi NUNN Lawn Care, I'd like a free estimate.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AProperty: ${encodeURIComponent(address)}%0AType: ${encodeURIComponent(type)}%0AService: ${encodeURIComponent(service)}%0ADetails: ${encodeURIComponent(message)}`;
- window.location.href='sms:19046549059?body='+body;
-}
-</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
